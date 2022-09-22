@@ -6,14 +6,18 @@ import React, { Component } from "react";
 class ItemContainer extends Component {
   componentDidMount() {
     this.props.paginateItems(1);
-  
-  }
+  //   window.addEventListener("beforeunload", (ev) => {
+  //     return (ev.returnValue = "Are you sure you want to close?");
+  // })
+}
 
-  componentWillUpdate() {
-    window.addEventListener("beforeunload", (ev) => {
-        return (ev.returnValue = "Are you sure you want to close?");
-      });   
-  }
+// componentWillUnmount() {
+//     window.removeEventListener('beforeunload');
+//     // fix Warning: Can't perform a React state update on an unmounted component
+//     this.setState = (state, callback) => {
+//         return;
+//     };
+// }
 
   render() {
     return (
